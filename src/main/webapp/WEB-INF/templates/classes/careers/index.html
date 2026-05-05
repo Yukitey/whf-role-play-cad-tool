@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WHF Role Play Cad Tool</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/theme.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/general.css}"/>
+</head>
+<body class="page-layout">
+<header th:replace="~{fragments/header :: header}">Header</header>
+<div th:fragment="content" class="page-content-panel-layout">
+    <h1 th:text="${career.getName()}" class="page-title"></h1>
+    <div th:each="stage : ${career.getCareerStages()}">
+        <div th:replace="~{fragments/characteristic-table :: characteristic-table(characteristics = ${characteristics})}"></div>
+        <h2 th:text="|Career stage ${stage.getName()} (${stage.getEstate()})|"></h2>
+        <label for="characteristic">Characteristics:</label>
+        <div id="characteristic" th:each="characteristic : ${stage.getAvailableElevationCharacteristics()}">
+            <span th:text="${characteristic.getName()}" />
+        </div>
+        <label for="skill">Skills:</label>
+        <div id="skill" th:each="skill : ${stage.getAvailableElevationCharacteristics()}">
+            <span th:text="${skill.getName()}" />
+
+        </div>
+        <label for="talent">Talents:</label>
+        <div id="talent" th:each="talent : ${stage.getAvailableTalents()}">
+            <span th:text="${talent.getName()}" />
+            <div th:replace="~{fragments/hover-popup::hover-popup(title = ${talent.getName()})}"></div>
+        </div>
+    </div>
+</div>
+<header th:replace="~{fragments/footer :: footer}">Footer</header>
+</body>
+</html>

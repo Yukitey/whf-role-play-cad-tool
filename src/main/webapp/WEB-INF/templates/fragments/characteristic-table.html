@@ -1,0 +1,7 @@
+<div th:fragment="characteristic-table" xmlns:th="http://www.thymeleaf.org" class="table">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/table.css}" />
+    <div th:each="characteristic: ${characteristics}" class="table-column">
+        <div th:utext="${characteristic}" class="table-row"></div>
+        <div class="table-row"></div>
+    </div>
+</div>

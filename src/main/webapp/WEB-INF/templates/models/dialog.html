@@ -1,0 +1,8 @@
+<dialog xmlns:th="http://www.thymeleaf.org" th:fragment="dialog" class="ui-dialog" >
+    <div class="ui-dialog-header-panel">
+        <button class="ui-dialog-close-button" autofocus>Close</button>
+    </div>
+    <div th:replace="~{${dialogContent} :: content}" class="ui-dialog-content-panel">
+
+    </div>
+</dialog>

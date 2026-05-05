@@ -1,0 +1,19 @@
+.table {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.table-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex: 1;
+}
+
+.table-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+}

@@ -1,0 +1,9 @@
+:root {
+
+    --main-text-color: #000;
+    --invert-text-color: #fff;
+
+    --main-component-color: #282a35;
+    --main-component-invert-color: #E7E9EB;
+    --main-component-hover-color: #000;
+}

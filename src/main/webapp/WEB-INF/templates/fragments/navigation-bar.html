@@ -1,0 +1,15 @@
+<nav th:if="${navigationBar != null}" th:fragment="navigation-bar" xmlns:th="http://www.thymeleaf.org" class="navigation-bar">
+    <ul th:insert="~{fragments/navigation-bar::bar(barItems = ${navigationBar})}"></ul>
+</nav>
+
+<ul th:fragment="bar">
+    <li th:each="barItem: ${barItems}"
+    th:class="${barItem.hasSubItems()} ? 'hover-popup-wrapper'">
+        <a th:class="${barItem.hasSubItems()} ? 'hover-popup-button'"
+           th:href="|/${barItem.getLink()}|"
+           th:text="${barItem.getName()}"></a>
+        <ul th:if="${barItem.hasSubItems()}"
+            th:class="'hover-popup-content'"
+            th:insert="~{this::bar(barItems = ${barItem.getSubItems()})}"></ul>
+    </li>
+</ul>

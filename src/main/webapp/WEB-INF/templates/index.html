@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WHF Role Play Cad Tool</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/theme.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/general.css}" />
+</head>
+<body class="page-layout">
+    <header th:replace="~{fragments/header :: header}">Header</header>
+    <div th:replace="~{classes/index :: content}">Page content</div>
+    <header th:replace="~{fragments/footer :: footer}">Footer</header>
+</body>
+</html>

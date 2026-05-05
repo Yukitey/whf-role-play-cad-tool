@@ -1,0 +1,4 @@
+<div th:fragment="hover-popup" xmlns:th="http://www.thymeleaf.org" class="hover-popup-wrapper">
+  <a th:text="${title}" class="hover-popup-button"></a>
+  <div th:if="${content!=null}" th:utext="${content}" class="hover-popup-content"></div>
+</div>
